@@ -1,0 +1,11 @@
+discord.py
+python-dotenv
+structlog
+pytest
+pytest-asyncio
+pytest-mock
+pydantic
+httpx
+respx
+pymonad
+assertpy
