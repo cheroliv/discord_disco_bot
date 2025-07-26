@@ -77,7 +77,8 @@ Le token Discord est un secret critique qui nécessite une gestion sécurisée :
 
 Notre bot musical nécessite des permissions spécifiques :
 
-```
+[source]
+----
 Permissions minimales :
 - Send Messages (0x0000000000000800)
 - Connect (0x0000000000100000)
@@ -88,15 +89,16 @@ Permissions recommandées :
 - Manage Messages (0x0000000000002000)
 - Embed Links (0x0000000000004000)
 - Add Reactions (0x0000000000000040)
-```
+----
 
 Ces permissions s'intègrent dans notre approche LDD via des logs de validation :
 
-```
+[source]
+----
 INFO: discord.auth.token_validation status=success scopes=['bot', 'applications.commands']
 DEBUG: discord.auth.permissions guild_id=123456 permissions=0x0000000080104840
 INFO: discord.bot.ready user=MusicBot#1234 guilds_count=1
-```
+----
 
 === Évolution des APIs Musicales
 
@@ -322,12 +324,13 @@ Notre approche LDD utilise des logs structurés avec des niveaux sémantiques :
 
 Avant d'implémenter la fonction de recherche Spotify, nous définissons ses logs :
 
-```
+[source]
+----
 INFO: spotify.search.start query="bohemian rhapsody" user_id=123456
 DEBUG: spotify.search.validation query_length=16 safe_chars=true
 DEBUG: spotify.search.api_call endpoint="/search" params={...}
 INFO: spotify.search.success results_count=15 duration_ms=340
-```
+----
 
 == Architecture de Validation avec Pydantic
 
@@ -529,6 +532,6 @@ Le développement itératif et l'architecture modulaire garantissent une évolut
 
 Cette fondation conceptuelle solide nous permettra de naviguer les défis techniques tout en livrant une expérience utilisateur exceptionnelle.
 
----
+'''
 
 *Cet article sera suivi d'une série technique détaillant l'implémentation de chaque composant avec exemples de code et patterns fonctionnels.*
